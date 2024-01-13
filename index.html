@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karls andra webbsida</title>
+</head>
+<body>
+
+  <!-- Pre-header -->
+  <div class="main-image vertical-container" style="height: 600px">
+    <p class="main-headline inverted-text-color"><em>Karls andra, väldigt annorlunda webbsida</em></p>
+    <p class="main-subtitle inverted-text-color">som definitivt inte är baserad på den förra</p>
+    <br />
+    <button class="cta-button primary-highlight">
+      <h2><strong>Häng med i framtiden eller nåt</strong></h2>
+    </button>
+  </div>
+
+  <!-- Header -->
+  <div class="header inverted-primary-color">
+    <div class="responsive-container">
+      <a href="index.html">
+        <img class="logo padded" src="Images/logo.png" />
+      </a>
+      <a href="navigate.html" class="navigation-option inverted-text-color">Navigera</a>
+      <a href="contact.html" class="navigation-option inverted-text-color">Kontakt</a>
+    </div>
+  </div>
+
+  <!-- Main page + sidebar -->
+  <div class="side-main-manager">
+    <!-- Add notices dynamically, and have a shared script that all pages use to get notices? -->
+    <div class="side-bar padded secondary-color">
+      <!-- Notices added dynamically from loadNotices.js -->
+      <div class="side-bar-div" id="side-bar-div"></div>
+    </div>
+    
+    <div class="main-content primary-color">
+      <h1>Om webbsidan</h1>
+      <p>
+        Det här är en annan webbsida. Den ser typ likadan ut som den första, men den här är flexiblare och allmänt lättare att arbeta med. Detta har gjort att jag kunnat lägga till nya funtioner snabbare än i den förra, exempelvis sidebaren och inforutan nedan. Färgschemat och storlekar kan lätt ändras.
+        <br />
+        <br />
+        Sidan märker av om man har en liten skärm, och gör lite saker för att kompensera:
+        <br />
+        - Flyttar sidebaren upp över den vanliga sidan. Jag är egentligen inget större fan av detta, då man kan behöva scrolla en del för att komma till den faktiska
+        informationen om det finns många notiser, men att ta bort den är också möjligt.
+        <br />
+        - Arrangerar om navigations-bar:en på headern och footern till att vara vertikala i stället för horisontella. Detta pga brist på horisontellt utrymme.
+        <br />
+        - Gör topptexten och CTA-knapparna (toppknappen) lite mindre.
+        <br />
+      </p>
+      <h1>Viktig info</h1>
+      <p>
+        Här är ett sätt att förvara viktigare eller TL;DR-info i sidan:
+      </p>
+      <div class="inline-block secondary-highlight">
+        <h2>Viktig-ish information</h2>
+        <p>
+          Här har jag en ruta i highlight-färger som kan användas för att visa information som man inte bör missa. Resten av texten skumläser man lätt, men så länge det som står här är ganska så kortfattat kommer det förhoppningsvis ses som viktig info.
+        </p>
+      </div>
+      <h1>Översättningar/språk</h1>
+      <p>
+        Det här är förvånansvärt drygt. Jag har läst lite online, och det bästa att göra verkar typ vara att ha olika sidor för olika språk, och knappar som literally är länkar til den nya sidan. Det tar mycket largingsplats och är allmänt ineffektivt känns det som, men jag antar att det är det bästa man kan göra om man inte vill blanda in JavaScript och JSON typ. Men det har sina egna problem.
+      </p>
+      <h1>Mer plats åt folket</h1>
+      <p style="height:500px;">
+        Återigen har jag lämnat en del extra plats så att man kan scrolla och testa header/footer/sidebar.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer inverted-primary-color">
+    <div class="responsive-container">
+      <div class="vertical-container">
+        <a href="#" class="navigation-option inverted-text-color">Till toppen</a>
+        <a href="navigate.html" class="navigation-option inverted-text-color">Navigera</a>
+        <a href="contact.html" class="navigation-option inverted-text-color">Kontakt</a>
+      </div>
+      <a href="index.html">
+        <img class="logo padded" src="Images/logo.png" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="loadNotices.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karls andra webbsida</title>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header inverted-primary-color">
+    <div class="responsive-container">
+      <a href="index.html">
+        <img class="logo padded" src="Images/logo.png" />
+      </a>
+      <!-- Add links here -->
+      <a href="index.html" class="navigation-option inverted-text-color">Hem</a>
+      <a href="404.html" class="navigation-option inverted-text-color">Navigera</a>
+    </div>
+  </div>
+
+  <!-- Main page + sidebar -->
+  <div class="side-main-manager">
+    <!-- Add notices dynamically, and have a shared script that all pages use to get notices? -->
+    <div class="side-bar padded secondary-color">
+      <div class="side-bar-div" id="side-bar-div"></div>
+    </div>
+    
+    <div class="main-content primary-color">
+      <h1>Kontaktinformation</h1>
+      <p>
+        Här kan man ha kontaktuppgifter och annat kul. Man kan också göra länkar som leder direkt till en mail-app, 
+        men de funkar inte för folk som note har valt en mailhanterade som default.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer inverted-primary-color">
+    <div class="responsive-container">
+      <div class="vertical-container">
+        <!-- Add links here -->
+        <a href="#" class="navigation-option inverted-text-color">Till toppen</a>
+        <a href="index.html" class="navigation-option inverted-text-color">Hem</a>
+        <a href="navigate.html" class="navigation-option inverted-text-color">Navigera</a>
+      </div>
+      <a href="index.html">
+        <img class="logo padded" src="Images/logo.png" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="loadNotices.js"></script>
+</body>
+</html>

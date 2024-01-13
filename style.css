@@ -1,0 +1,252 @@
+/*
+
+Note: This CSS file follows the "dev for mobile first"-rule.
+When making something responsive, the default will always be for mobile!
+
+For now, I solve the footer end-to-soon issue by just forcing a long main page. This seems
+to be the simplest way to  have the notice board go all the way down to the footer
+
+Z-indices:
+1: Background
+2: Main page
+3: Overlay
+4: Header
+
+*/
+
+/* Colors defined here. Avoid definfing colors anywhere else */
+:root {
+  --primary-highlight: darkorange;
+  --secondary-highlight: rgb(255, 210, 126);
+  --primary-background: whitesmoke;
+  --secondary-background: lightgray;
+  --primary-base: black;
+  --inverted-base: lightgray;
+}
+
+/* Modifiers */
+.primary-color {
+  background-color: var(--primary-background);
+  color: var(--primary-base);
+}
+.secondary-color {
+  background-color: var(--secondary-background);
+  color: var(--primary-base);
+}
+.inverted-primary-color {
+  background-color: var(--primary-base);
+  color: var(--primary-highlight);
+}
+.primary-highlight {
+  background-color: var(--primary-highlight);
+  color: var(--primary-base);
+}
+.secondary-highlight {
+  background-color: var(--secondary-highlight);
+  color: var(--primary-base);
+}
+.text-color {
+  color: var(--primary-base);
+}
+.inverted-text-color {
+  color: var(--inverted-base);
+}
+
+.bordered-primary {
+  border-style: solid;
+  border-color: var(--primary-base);
+}
+.rounded {
+  border-radius: 15px;
+}
+.padded {
+  padding: 5px;
+}
+.margin-y {
+  margin: 5px 0px;
+}
+
+/* Modifying built-in things to make them fit better */
+* {
+  box-sizing: border-box; /* Adjusts for borders */
+}
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  text-align: center;
+  margin: 30px 20px 0px 20px;
+  font-size: large;
+}
+h2 {
+  margin: 20px;
+  font-size:  medium;
+}
+p {
+  margin: 20px;
+}
+/* https://www.w3schools.com/howto/howto_css_text_selection.asp */
+::-moz-selection { /* Code for Firefox */
+  color: var(--inverted-base);
+  background: var(--primary-base);
+}
+
+::selection {
+  color: var(--inverted-base);
+  background: var(--primary-base);
+}
+
+/* Classes */
+
+/* Sticky header */
+.header {
+  position: sticky;
+  top: -5px;
+  padding-top: 5px;
+  z-index: 4;
+}
+/* Decides whether to move the sidebar to the left on not. */
+.side-main-manager {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* Notice bar on the left, added when wide screen */
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+/* Holding the sticky side bar content */
+.side-bar-div {
+  position: sticky;
+  top: 90px;
+}
+/* Main page */
+.main-content {
+  width: 100%;
+}
+/* Self explanatory */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-top: 10px;
+}
+
+/* Image above header */
+.main-image {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, black 100%),
+    url(Images/image.png);
+  background-size: cover;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Big text above header */
+.main-headline {
+  font-size: xx-large;
+  text-align: center;
+  margin: 5px 10px;
+}
+.main-subtitle {
+  font-size: larger;
+  text-align: center;
+  margin: 5px 10px;
+}
+
+.navigation-option {
+  margin: 5px 10px;
+}
+
+.logo {
+  height: 80px;
+  aspect-ratio: 1;
+}
+
+/* Contaniers for use anyhwere */
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.responsive-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inline-block {
+  width: 100%;
+  border-left: solid;
+  border-width: 15px;
+  border-color: var(--primary-highlight);
+  padding: 10px;
+}
+
+.cta-button {
+  height: 60px;
+  border-radius: 500px;
+  padding: 0px 15px;
+  font-size: large;
+  display: flex;
+  align-items: center;
+}
+
+/* LARGER SCREEN: Move elements around a bit */
+@media only screen and (min-width: 800px) {
+  /* Navigation options vertical instead of horizontal */
+  .navigation-container {
+    flex-direction: row;
+  }
+  /* Move the side bar to the left */
+  .side-main-manager {
+    flex-direction: row;
+  }
+  .main-content {
+    flex: 1;  /* now takes up 1/1 of screen width */
+  }
+  .side-bar {
+    width: 30%;
+    max-width: 350px;
+  }
+  /* Change footer element direction to horizontal */
+  .footer {
+    flex-direction: row;
+  }
+  /* Make the main headline/subtitle bigger */
+  .main-headline {
+    font-size: 72px;
+  }
+  .main-subtitle {
+    font-size: 42px;
+  }
+  /* Since the sidebar is there, headlines look better left-focused */
+  h1 {
+    text-align: left;
+  }
+  /* MAke CTA buttons slithly larger */
+  .cta-button {
+    height: 100px;
+    padding: 0px 30px;
+    font-size: larger;
+  }
+  /* Change the responsive container to horizontal */
+  .responsive-container {
+    flex-direction: row;
+  }
+  /* Make h1 and h2 tag have larger text */
+  h1 {
+    font-size: xx-large;
+  }
+  h2 {
+    font-size: x-large;
+  }
+}
