@@ -1,3 +1,4 @@
 
 - Figure out a decent way to make navlinks auto-update from a script
-  * load script, run function with webpage name as parameter?
+  * Load script, run function with webpage name as parameter? Then add all the links that 
+    don't match the page name

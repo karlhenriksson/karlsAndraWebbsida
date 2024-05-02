@@ -16,12 +16,12 @@ Z-indices:
 
 /* Colors defined here. Avoid definfing colors anywhere else */
 :root {
-  --primary-highlight: darkorange;
-  --secondary-highlight: rgb(255, 210, 126);
+  --primary-highlight: rgb(54, 93, 177);
+  --secondary-highlight: rgb(139, 157, 197);
   --primary-background: whitesmoke;
-  --secondary-background: lightgray;
+  --secondary-background: rgb(182, 182, 182);
   --primary-base: black;
-  --inverted-base: lightgray;
+  --inverted-base: rgb(182, 182, 182);
 }
 
 /* Modifiers */
@@ -86,6 +86,9 @@ h2 {
 p {
   margin: 20px;
 }
+a {
+  color: inherit;
+}
 /* https://www.w3schools.com/howto/howto_css_text_selection.asp */
 ::-moz-selection { /* Code for Firefox */
   color: var(--inverted-base);
@@ -99,36 +102,34 @@ p {
 
 /* Classes */
 
-/* Sticky header */
-.header {
-  position: sticky;
-  top: -5px;
+/* Sticky header (when on computer) */
+#header {
+  position: static;
+  top: -1px;
   padding-top: 5px;
   z-index: 4;
 }
 /* Decides whether to move the sidebar to the left on not. */
-.side-main-manager {
+#side-main-manager {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 /* Notice bar on the left, added when wide screen */
-.side-bar {
+#side-bar {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 /* Holding the sticky side bar content */
-.side-bar-div {
+#side-bar-div {
   position: sticky;
   top: 90px;
 }
-/* Main page */
-.main-content {
+#main-content {
   width: 100%;
 }
-/* Self explanatory */
-.footer {
+#footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,18 +208,21 @@ p {
     flex-direction: row;
   }
   /* Move the side bar to the left */
-  .side-main-manager {
+  #side-main-manager {
     flex-direction: row;
   }
-  .main-content {
+  #main-content {
     flex: 1;  /* now takes up 1/1 of screen width */
   }
-  .side-bar {
+  #side-bar {
     width: 30%;
     max-width: 350px;
   }
+  #header {
+    position: sticky;
+  }
   /* Change footer element direction to horizontal */
-  .footer {
+  #footer {
     flex-direction: row;
   }
   /* Make the main headline/subtitle bigger */
@@ -234,7 +238,7 @@ p {
   }
   /* MAke CTA buttons slithly larger */
   .cta-button {
-    height: 100px;
+    height: 80px;
     padding: 0px 30px;
     font-size: larger;
   }
