@@ -203,10 +203,6 @@ a {
 
 /* LARGER SCREEN: Move elements around a bit */
 @media only screen and (min-width: 800px) {
-  /* Navigation options vertical instead of horizontal */
-  .navigation-container {
-    flex-direction: row;
-  }
   /* Move the side bar to the left */
   #side-main-manager {
     flex-direction: row;
